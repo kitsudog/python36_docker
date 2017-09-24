@@ -36,5 +36,6 @@ RUN cd /tmp && \
     cd pip-8.1.2 && \
     python3.6 setup.py install && \
     echo "[pip]"
-
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
 RUN curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
