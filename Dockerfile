@@ -1,6 +1,5 @@
 FROM centos:7
 MAINTAINER Dave Luo <kitsudo163@163.com>
-RUN curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 RUN rpmdb --rebuilddb && yum install -y nc htop net-tools telnet wget tcpdump && yum clean all
 RUN /bin/cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN rpmdb --rebuilddb && yum install -y \
@@ -37,3 +36,5 @@ RUN cd /tmp && \
     cd pip-8.1.2 && \
     python3.6 setup.py install && \
     echo "[pip]"
+
+RUN curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
